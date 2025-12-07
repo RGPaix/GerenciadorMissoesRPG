@@ -1,0 +1,59 @@
+# 🚀 INSTRUÇÕES RÁPIDAS DE EXECUÇÃO
+
+## Como rodar o projeto
+
+### Passo 1: Compilar
+```bash
+javac Node.java ArvoreAVL.java GerenciadorMissoesRPG.java
+```
+
+### Passo 2: Executar
+```bash
+java GerenciadorMissoesRPG
+```
+
+### Passo 3: Teste rápido
+1. Digite `7` (Carregar missões de exemplo)
+2. Digite `5` (Visualizar árvore)
+3. Digite `4` (Listar todas as missões)
+4. Explore outras opções!
+
+## Requisitos
+- Java JDK 8 ou superior
+- Terminal (cmd, PowerShell, bash, etc.)
+
+## Estrutura dos arquivos
+```
+├── Node.java                    → Classe do nó da árvore
+├── ArvoreAVL.java              → Implementação da Árvore AVL
+├── GerenciadorMissoesRPG.java  → Classe principal (main)
+├── README.md                    → Documentação completa
+├── DOCUMENTACAO_TECNICA.md     → Documentação técnica detalhada
+└── GUIA_APRESENTACAO.md        → Guia para apresentação do projeto
+```
+
+## Demonstração rápida para professores
+
+Se o professor quiser testar rapidamente:
+
+1. Compilar: `javac *.java`
+2. Executar: `java GerenciadorMissoesRPG`
+3. Opção 7: Carregar exemplos
+4. Opção 5: Ver estrutura da árvore balanceada
+5. Opção 1: Adicionar missão nível 5 → "Tutorial inicial"
+6. Opção 5: Ver que rebalanceou automaticamente!
+
+## Recursos do projeto
+
+✅ Árvore AVL completa e funcional
+✅ Inserção com balanceamento automático
+✅ Remoção com rebalanceamento
+✅ Busca eficiente O(log n)
+✅ Visualização da estrutura da árvore
+✅ Interface interativa completa
+✅ Código bem documentado
+✅ 4 tipos de rotações implementadas (RR, LL, LR, RL)
+
+## Contato
+Rodrigo Gomes da Paixão
+rodrigogomespaixao@bol.com.br

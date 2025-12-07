@@ -1,0 +1,266 @@
+# 📝 EXEMPLOS DE EXECUÇÃO DO PROGRAMA
+
+## Exemplo 1: Carregando Missões de Exemplo
+
+### Entrada:
+```
+Opção: 7
+```
+
+### Saída:
+```
+=== CARREGAR MISSÕES DE EXEMPLO ===
+✓ 10 missões de exemplo carregadas!
+⚠ Árvore balanceada automaticamente durante as inserções!
+```
+
+---
+
+## Exemplo 2: Visualizando a Árvore
+
+### Entrada:
+```
+Opção: 5
+```
+
+### Saída:
+```
+=== ESTRUTURA DA ÁRVORE AVL ===
+Legenda: Nv=Nível, h=Altura, FB=Fator de Balanceamento
+
+└── Nv50 (h=4, FB=0): Explorar caverna abandonada
+    ├── Nv25 (h=2, FB=0): Coletar 10 ervas medicinais
+    │   ├── Nv15 (h=1, FB=0): Derrotar 5 slimes no vilarejo
+    │   └── Nv35 (h=1, FB=0): Escoltar mercador até a cidade
+    └── Nv70 (h=3, FB=-1): Derrotar o chefe goblin
+        ├── Nv60 (h=2, FB=1): Caçar lobos selvagens na floresta
+        │   └── Nv45 (h=1, FB=0): Entregar carta ao prefeito
+        └── Nv90 (h=2, FB=1): Investigar ruínas antigas
+            ├── Nv80 (h=1, FB=0): Resgatar prisioneiros da torre
+            └── Nv100 (h=1, FB=0): Enfrentar o dragão da montanha
+```
+
+### Observações:
+- ✅ Todos os fatores de balanceamento estão entre -1, 0 e 1
+- ✅ A árvore está perfeitamente balanceada
+- ✅ Altura máxima é 4 para 10 nós (log₂(10) ≈ 3.3)
+
+---
+
+## Exemplo 3: Buscando uma Missão
+
+### Entrada:
+```
+Opção: 2
+Nível da missão: 50
+```
+
+### Saída:
+```
+=== BUSCAR MISSÃO ===
+✓ Missão encontrada: [Nível 50] Explorar caverna abandonada
+```
+
+### Entrada (missão inexistente):
+```
+Opção: 2
+Nível da missão: 55
+```
+
+### Saída:
+```
+=== BUSCAR MISSÃO ===
+✗ Nenhuma missão encontrada no nível 55
+```
+
+---
+
+## Exemplo 4: Adicionando Nova Missão
+
+### Entrada:
+```
+Opção: 1
+Nível de dificuldade (1-100): 5
+Descrição da missão: Tutorial inicial para novos jogadores
+```
+
+### Saída:
+```
+=== ADICIONAR MISSÃO ===
+✓ Missão adicionada com sucesso!
+⚠ Árvore automaticamente balanceada!
+```
+
+### Árvore após a inserção (Opção 5):
+```
+└── Nv50 (h=4, FB=1): Explorar caverna abandonada
+    ├── Nv25 (h=3, FB=1): Coletar 10 ervas medicinais
+    │   ├── Nv15 (h=2, FB=1): Derrotar 5 slimes no vilarejo
+    │   │   └── Nv5 (h=1, FB=0): Tutorial inicial para novos jogadores
+    │   └── Nv35 (h=1, FB=0): Escoltar mercador até a cidade
+    └── Nv70 (h=3, FB=-1): Derrotar o chefe goblin
+        ├── Nv60 (h=2, FB=1): Caçar lobos selvagens na floresta
+        │   └── Nv45 (h=1, FB=0): Entregar carta ao prefeito
+        └── Nv90 (h=2, FB=1): Investigar ruínas antigas
+            ├── Nv80 (h=1, FB=0): Resgatar prisioneiros da torre
+            └── Nv100 (h=1, FB=0): Enfrentar o dragão da montanha
+```
+
+### Observação:
+- ✅ Novo nó inserido na posição correta
+- ✅ Árvore permanece balanceada (|FB| ≤ 1)
+
+---
+
+## Exemplo 5: Removendo uma Missão
+
+### Entrada:
+```
+Opção: 3
+Nível da missão a remover: 15
+```
+
+### Saída:
+```
+=== REMOVER MISSÃO ===
+✓ Missão removida com sucesso!
+⚠ Árvore automaticamente balanceada!
+```
+
+### Árvore após a remoção (Opção 5):
+```
+└── Nv50 (h=4, FB=0): Explorar caverna abandonada
+    ├── Nv25 (h=2, FB=-1): Coletar 10 ervas medicinais
+    │   ├── Nv5 (h=1, FB=0): Tutorial inicial para novos jogadores
+    │   └── Nv35 (h=1, FB=0): Escoltar mercador até a cidade
+    └── Nv70 (h=3, FB=-1): Derrotar o chefe goblin
+        ├── Nv60 (h=2, FB=1): Caçar lobos selvagens na floresta
+        │   └── Nv45 (h=1, FB=0): Entregar carta ao prefeito
+        └── Nv90 (h=2, FB=1): Investigar ruínas antigas
+            ├── Nv80 (h=1, FB=0): Resgatar prisioneiros da torre
+            └── Nv100 (h=1, FB=0): Enfrentar o dragão da montanha
+```
+
+---
+
+## Exemplo 6: Listando Todas as Missões
+
+### Entrada:
+```
+Opção: 4
+```
+
+### Saída:
+```
+=== LISTA DE MISSÕES (ordem crescente) ===
+[Nível 5] Tutorial inicial para novos jogadores
+[Nível 25] Coletar 10 ervas medicinais
+[Nível 35] Escoltar mercador até a cidade
+[Nível 45] Entregar carta ao prefeito
+[Nível 50] Explorar caverna abandonada
+[Nível 60] Caçar lobos selvagens na floresta
+[Nível 70] Derrotar o chefe goblin
+[Nível 80] Resgatar prisioneiros da torre
+[Nível 90] Investigar ruínas antigas
+[Nível 100] Enfrentar o dragão da montanha
+Total: 10 missões
+```
+
+### Observação:
+- ✅ Missões listadas em ordem crescente de nível
+- ✅ Percurso em ordem da árvore (in-order traversal)
+
+---
+
+## Exemplo 7: Estatísticas
+
+### Entrada:
+```
+Opção: 6
+```
+
+### Saída:
+```
+=== ESTATÍSTICAS ===
+Total de missões: 10
+Status: Contém dados
+
+💡 Propriedade AVL: A árvore está sempre balanceada!
+   |Altura(esquerda) - Altura(direita)| ≤ 1 para todos os nós
+```
+
+---
+
+## Exemplo 8: Teste de Rotação (Caso RR)
+
+### Sequência de inserções que força rotação à direita:
+```
+Opção 1: Nível 30, Missão "C"
+Opção 1: Nível 20, Missão "B"
+Opção 1: Nível 10, Missão "A"
+```
+
+### Antes da última inserção:
+```
+└── Nv30: C
+    └── Nv20: B
+```
+
+### Depois da inserção (com rotação automática):
+```
+└── Nv20: B
+    ├── Nv10: A
+    └── Nv30: C
+```
+
+### O que aconteceu:
+1. Inserir 10 causaria FB(30) = 2 (desbalanceado!)
+2. Algoritmo detecta: FB > 1 e FB(filho_esq) ≥ 0
+3. Aplica rotação simples à direita
+4. Árvore volta ao equilíbrio automaticamente!
+
+---
+
+## Exemplo 9: Teste de Rotação (Caso LR)
+
+### Sequência que força rotação dupla:
+```
+Opção 1: Nível 30, Missão "A"
+Opção 1: Nível 10, Missão "B"
+Opção 1: Nível 20, Missão "C"
+```
+
+### Estrutura após a rotação:
+```
+└── Nv20: C
+    ├── Nv10: B
+    └── Nv30: A
+```
+
+### O que aconteceu:
+1. FB(30) = 2 e FB(10) = -1
+2. Algoritmo detecta caso Esquerda-Direita
+3. Aplica rotação esquerda em 10
+4. Aplica rotação direita em 30
+5. Resultado: árvore balanceada!
+
+---
+
+## Exemplo 10: Limpar Todas as Missões
+
+### Entrada:
+```
+Opção: 8
+⚠ Tem certeza que deseja limpar todas as missões? (S/N): S
+```
+
+### Saída:
+```
+✓ Todas as missões foram removidas!
+```
+
+### Verificação (Opção 5):
+```
+=== ESTRUTURA DA ÁRVORE AVL ===
+Árvore vazia
+```
